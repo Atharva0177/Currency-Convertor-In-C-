@@ -1,0 +1,30 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() 
+{
+    double rate, amount, conversion;
+    char choice;
+    
+    cout << "Enter the exchange rate from dollars to rupees: ";
+    cin >> rate;
+    
+    cout << "Enter 0 to convert from dollars to rupees or 1 to convert from rupees to dollars: ";
+    cin >> choice;
+    
+    cout << "Enter the amount to be converted: ";
+    cin >> amount;
+    
+    if (choice == '0') {
+        conversion = amount * rate;
+        cout << fixed << setprecision(2) << amount << " dollars = " << conversion << " rupees" << endl;
+    } else if (choice == '1') {
+        conversion = amount / rate;
+        cout << fixed << setprecision(2) << amount << " rupees = " << conversion << " dollars" << endl;
+    } else {
+        cout << "Invalid choice, please try again." << endl;
+    }
+    
+    return 0;
+}
